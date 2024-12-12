@@ -23,9 +23,9 @@ console.log(Member)
 console.info("Function class")
 class Mobil{
   merek = "";
-  warna = "";
   constructor(jenis){
     this.tahun = "";
+    this.warna = warna;
   }
 }
 const avanza = new Mobil("sedan")
