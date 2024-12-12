@@ -8,13 +8,13 @@ console.info("Function Constructor")
 function Person(nama,umur,clan){
   this.nama = nama;
   this.umur = umur;
-  this.clan = function(){
+  this.clan = class clan{
     console.log(`${this.nama} dari clan Tempest`)
-  }
+  };
   this.asal = "";
   this.hallo = function(he){
     console.log(`Hallo ${he}, saya ${this.nama}`)
-  }
+  };
 };
 const Owner = new Person("Sean","18",);
 Owner.asal = "Jakarta";
