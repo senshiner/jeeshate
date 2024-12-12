@@ -5,7 +5,7 @@ function say(nama){
 say("Sean");
 
 console.info("Function Constructor")
-function Person(nama,umur){
+function Person(nama,umur = null){
   this.nama = nama;
   this.umur = umur;
   this.asal = "";
