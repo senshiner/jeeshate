@@ -16,9 +16,9 @@ function Person(nama,umur,clan){
     console.log(`Hallo ${he}, saya ${this.nama}`)
   };
 };
-const Owner = new Person("Sean","18",);
+const Owner = new Person("Sean","18","01");
 Owner.asal = "Jakarta";
-const Member = new Person("Isagi",,"ayo");
+const Member = new Person("Isagi","20","03");
 Member.hallo("Joko");
 console.log(Owner)
 console.log(Member)
