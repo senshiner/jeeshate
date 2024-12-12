@@ -12,3 +12,4 @@ function Person(){
 const Owner = new Person();
 Owner.name = "Sean";
 Owner.asal = "Jakarta";
+console.log(Owner);
