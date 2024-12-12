@@ -15,7 +15,17 @@ function Person(nama,umur = null){
 };
 const Owner = new Person("Sean","18");
 Owner.asal = "Jakarta";
-const Member = new Person("Isagi",);
+const Member = new Person("Isagi");
 Member.hallo("Joko");
 console.log(Owner)
 console.log(Member)
+
+console.info("Function class")
+class Mobil{
+  merek = "";
+  warna = "";
+}
+const avanza = new Mobil()
+Mobil.merek = "avanza";
+Mobil.warna = "hitam";
+console.log(avanza)
