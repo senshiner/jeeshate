@@ -31,5 +31,5 @@ class Mobil{
 const avanza = new Mobil()
 avanza.merek = "avanza";
 avanza.warna = "hitam";
-Mobil.tahun = "1990";
+avanza.tahun = "1990";
 console.log(avanza)
