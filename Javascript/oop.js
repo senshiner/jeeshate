@@ -5,18 +5,20 @@ function say(nama){
 say("Sean");
 
 console.info("Function Constructor")
-function Person(){
-  this.name = "";
+function Person(nama,umur,clan){
+  this.nama = nama;
+  this.umur = umur;
+  this.clan = function(){
+    console.log(`${this.nama} dari clan Tempest`)
+  }
   this.asal = "";
   this.hallo = function(he){
-    console.log(`Hallo ${he}, saya ${this.name}`)
+    console.log(`Hallo ${he}, saya ${this.nama}`)
   }
 };
-const Owner = new Person();
-Owner.name = "Sean";
+const Owner = new Person("Sean","18",);
 Owner.asal = "Jakarta";
-const Member = new Person();
-Member.name = "Isagi";
+const Member = new Person("Isagi",,);
 Member.hallo("Joko");
 console.log(Owner)
 console.log(Member)
