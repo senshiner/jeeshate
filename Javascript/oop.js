@@ -29,7 +29,7 @@ class Mobil{
     // jangan gunakan function disini!!
   }
   kata(){
-    console.info(`Ini mobil baruku ${merek}`)
+    console.info(`Ini mobil baruku ${avanza.merek}`)
   }
 }
 const avanza = new Mobil("hitam")
