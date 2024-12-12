@@ -12,4 +12,8 @@ function Person(){
 const Owner = new Person();
 Owner.name = "Sean";
 Owner.asal = "Jakarta";
-console.log(Owner);
+const Member = new Person();
+Member.name = "Isagi";
+
+console.log(Owner)
+console.log(Member)
