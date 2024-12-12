@@ -8,8 +8,8 @@ console.info("Function Constructor")
 function Person(nama,umur,clan){
   this.nama = nama;
   this.umur = umur;
-  this.clan = class clan{
-    console.log(`${this.nama} dari clan Tempest`)
+  this.clan = function(a){
+    console.log(`${this.nama} dari clan ${a}`)
   };
   this.asal = "";
   this.hallo = function(he){
@@ -18,7 +18,7 @@ function Person(nama,umur,clan){
 };
 const Owner = new Person("Sean","18",);
 Owner.asal = "Jakarta";
-const Member = new Person("Isagi",,);
+const Member = new Person("Isagi",,"ayo");
 Member.hallo("Joko");
 console.log(Owner)
 console.log(Member)
