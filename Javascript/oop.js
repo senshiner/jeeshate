@@ -28,7 +28,7 @@ class Mobil{
     this.warna = warna; // 3
     // jangan gunakan function disini!!
   }
-  kata(){
+  kata(){ // 4
     console.info(`Ini mobil baruku ${avanza.merek}`)
   }
 }
