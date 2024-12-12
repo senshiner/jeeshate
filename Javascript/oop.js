@@ -37,3 +37,6 @@ avanza.merek = "avanza";
 avanza.tahun = "1990";
 avanza.kata();
 console.log(avanza)
+
+console.info("Function Inherits");
+
