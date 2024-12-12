@@ -23,13 +23,12 @@ console.log(Member)
 console.info("Function class")
 class Mobil{
   merek = "";
-  constructor(jenis){
+  constructor(warna){
     this.tahun = "";
     this.warna = warna;
   }
 }
-const avanza = new Mobil("sedan")
+const avanza = new Mobil("hitam")
 avanza.merek = "avanza";
-avanza.warna = "hitam";
 avanza.tahun = "1990";
 console.log(avanza)
