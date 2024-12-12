@@ -26,6 +26,6 @@ class Mobil{
   warna = "";
 }
 const avanza = new Mobil()
-Mobil.merek = "avanza";
-Mobil.warna = "hitam";
+avanza.merek = "avanza";
+avanza.warna = "hitam";
 console.log(avanza)
