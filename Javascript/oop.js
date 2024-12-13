@@ -42,13 +42,13 @@ console.log(avanza)
 console.info("Function Inherits");
 class Employee{
   sayHello(name){
-    console.info(`Hallo ${name}, my name is Employee ${this.say}`)
+    console.info(`Hallo ${name}, my name is ${this.say}`)
   }
 }
 class Manager extends Employee{
-  sayHello(name){
-    console.info(`Hallo ${name}, my name is Manager ${this.say}`)
-  }
+  // sayHello(name){
+  //   console.info(`Hallo ${name}, my name is ${this.say}`)
+  // }
 }
 const sean = new Employee();
 sean.say = "Sean"
