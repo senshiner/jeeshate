@@ -1,9 +1,10 @@
+//=======================================
 console.info("Function biasa");
 function say(nama){
   console.info(`Hallo saya ${nama}, asal Indonesia`)
 };
 say("Sean");
-
+//=======================================
 console.info("Function Constructor")
 function Person(nama,umur = null){
   this.nama = nama; 
@@ -13,13 +14,13 @@ function Person(nama,umur = null){
     console.log(`Hallo ${he}, saya ${this.nama}`)
   };
 };
-const Owner = new Person("Sean","18");
-Owner.asal = "Jakarta";
-const Member = new Person("Isagi");// umur null
-Member.hallo("Joko");
-console.log(Owner)
-console.log(Member)
-
+const owner = new Person("Sean","18");
+owner.asal = "Jakarta";
+const member = new Person("Isagi");// umur null
+member.hallo("Joko");
+console.log(owner)
+console.log(member)
+//=======================================
 console.info("Function class")
 class Mobil{
   merek = ""; // 1
@@ -37,6 +38,23 @@ avanza.merek = "avanza";
 avanza.tahun = "1990";
 avanza.kata();
 console.log(avanza)
-
+//=======================================
 console.info("Function Inherits");
-
+class Employee{
+  sayHello(name){
+    console.info(`Hallo ${name}, my name is Manager ${this.say}`)
+  }
+}
+class Manager extends Employee{
+  sayHello(name){
+    console.info(`Hallo ${name}, my name is Employee ${this.say}`)
+  }
+}
+const sean = new Employee();
+sean.say = "Sean"
+sean.sayHello("Joko")
+const budi = new Manager();
+budi.say = "Budi"
+budi.sayHello("Joko")
+console.log(sean);
+console.log(budi);
