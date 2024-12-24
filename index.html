@@ -1,22 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Learning Python</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadwal Harian Sehat</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header">
 
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Jadwal Harian Sehat</h1>
+
+    <div class="schedule bg-light p-4 rounded shadow">
+      <h2 class="text-center mb-4" id="currentDay"></h2>
+      <div class="task mb-3">
+        <h3 id="time1" class="fw-bold"></h3>
+        <p id="meal1"></p>
+      </div>
+      <div class="task mb-3">
+        <h3 id="time2" class="fw-bold"></h3>
+        <p id="meal2"></p>
+      </div>
+      <div class="task mb-3">
+        <h3 id="time3" class="fw-bold"></h3>
+        <p id="meal3"></p>
+      </div>
+      <div class="task mb-3">
+        <h3 id="time4" class="fw-bold"></h3>
+        <p id="meal4"></p>
+      </div>
     </div>
-    <div class="main">
 
-    </div>
-    <div class="footer">
+  </div>
 
-    </div>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
