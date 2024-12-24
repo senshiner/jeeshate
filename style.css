@@ -2,8 +2,7 @@
   --one-color: rgb(0, 255, 179);
   --two-color: rgb(106, 118, 230);
   --font: Tahoma;
-}
-body {
+}body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
 }
