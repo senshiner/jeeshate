@@ -6,25 +6,61 @@
     <title>Jadwal Harian</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
+        body {
+            background-color: #f8f9fa;
+        }
         .container {
             max-width: 800px;
             margin-top: 50px;
         }
-        .schedule {
+        .schedule-card {
             margin-bottom: 30px;
         }
-        .schedule h4 {
-            margin-bottom: 20px;
+        .schedule-card .card-body {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .schedule-card ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .schedule-card ul li {
+            background-color: #f1f3f5;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #343a40;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2 class="text-center">Jadwal Harian</h2>
-
-    <div id="jadwal" class="schedule">
-        <!-- Jadwal akan muncul di sini -->
+    <h2 class="text-center mb-4">Jadwal Harian</h2>
+    
+    <div class="schedule-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Jadwal Hari Ini</h4>
+                <ul id="jadwal-list" class="list-group">
+                    <li class="list-group-item"><strong>06:00 - 06:10:</strong> Bangun tidur, minum air putih (500 ml)</li>
+                    <li class="list-group-item"><strong>06:10 - 06:30:</strong> Sarapan: Nasi seporsi dengan 2 butir telur. Cemilan: 1-2 keping Biskuit Regal</li>
+                    <li class="list-group-item"><strong>06:30 - 07:00:</strong> Olahraga: <span id="olahraga-pagi"></span></li>
+                    <li class="list-group-item"><strong>07:00 - 08:00:</strong> Mandi dan persiapan aktivitas sehari-hari</li>
+                    <li class="list-group-item"><strong>12:00 - 12:10:</strong> Camilan: 1-2 potong Roti Tawar dengan sedikit margarin, 1-2 keping Biskuit Regal</li>
+                    <li class="list-group-item"><strong>12:10 - 13:00:</strong> Makan Siang: Nasi putih (1 centong sedang)</li>
+                    <li class="list-group-item"><strong>16:00 - 16:10:</strong> Camilan: 1-2 potong Roti Tawar dengan sedikit margarin, 1-2 keping Biskuit Regal</li>
+                    <li class="list-group-item"><strong>19:00 - 19:10:</strong> Makan Malam: Nasi putih (1 centong kecil)</li>
+                    <li class="list-group-item"><strong>20:00 - 20:30:</strong> Olahraga: <span id="olahraga-malam"></span></li>
+                    <li class="list-group-item"><strong>21:00 - 21:10:</strong> Camilan: 1-2 keping Biskuit Regal, jika lapar bisa makan Roti Tawar</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
 
