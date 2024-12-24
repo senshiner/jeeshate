@@ -3,38 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jadwal Harian</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
+    <title>Jadwal Harian & Olahraga</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="container mt-5">
+        <h1 class="text-center">Jadwal Harian</h1>
 
-<div class="container">
-    <h2 class="text-center mb-4">Jadwal Harian</h2>
-    
-    <div class="schedule-card">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Jadwal Hari Ini</h4>
-                <ul id="jadwal-list" class="list-group">
-                    <li class="list-group-item"><strong>06:00 - 06:10:</strong> Bangun tidur, minum air putih (500 ml)</li>
-                    <li class="list-group-item"><strong>06:10 - 06:30:</strong> Sarapan: Nasi seporsi dengan 2 butir telur. Cemilan: 1-2 keping Biskuit Regal</li>
-                    <li class="list-group-item"><strong>06:30 - 07:00:</strong> Olahraga: <span id="olahraga-pagi"></span></li>
-                    <li class="list-group-item"><strong>07:00 - 08:00:</strong> Mandi dan persiapan aktivitas sehari-hari</li>
-                    <li class="list-group-item"><strong>12:00 - 12:10:</strong> Camilan: 1-2 potong Roti Tawar dengan sedikit margarin, 1-2 keping Biskuit Regal</li>
-                    <li class="list-group-item"><strong>12:10 - 13:00:</strong> Makan Siang: Nasi putih (1 centong sedang)</li>
-                    <li class="list-group-item"><strong>16:00 - 16:10:</strong> Camilan: 1-2 potong Roti Tawar dengan sedikit margarin, 1-2 keping Biskuit Regal</li>
-                    <li class="list-group-item"><strong>19:00 - 19:10:</strong> Makan Malam: Nasi putih (1 centong kecil)</li>
-                    <li class="list-group-item"><strong>20:00 - 20:30:</strong> Olahraga: <span id="olahraga-malam"></span></li>
-                    <li class="list-group-item"><strong>21:00 - 21:10:</strong> Camilan: 1-2 keping Biskuit Regal, jika lapar bisa makan Roti Tawar</li>
+        <!-- Jadwal Harian -->
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong>Pagi (06:00 - 08:00)</strong><br>
+                        06:00 - 06:10: Bangun tidur, minum air putih (500 ml).<br>
+                        06:10 - 06:30: Sarapan (Nasi putih, Telur ayam, Biskuit Regal).<br>
+                        <button class="btn btn-link" onclick="showExercise('morning')">Jadwal Olahraga Pagi</button>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Siang (12:00 - 13:00)</strong><br>
+                        12:00 - 12:10: Camilan (Roti Tawar, Biskuit Regal).<br>
+                        12:10 - 13:00: Makan Siang (Nasi putih, lauk lainnya).<br>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Sore (16:00 - 17:00)</strong><br>
+                        16:00 - 16:10: Camilan (Roti Tawar, Biskuit Regal).<br>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Malam (19:00 - 20:00)</strong><br>
+                        19:00 - 19:10: Makan Malam (Nasi putih).<br>
+                        <button class="btn btn-link" onclick="showExercise('night')">Jadwal Olahraga Malam</button>
+                    </li>
                 </ul>
             </div>
         </div>
+
+        <!-- Tempat menampilkan Jadwal Olahraga -->
+        <div id="exercise-schedule" class="mt-4" style="display: none;">
+            <!-- Jadwal Olahraga akan ditampilkan di sini -->
+        </div>
     </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
-
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
