@@ -18,10 +18,13 @@ const schedule = {
     waktu: {
         pagi: "06:00 - 06:30",
         olahragaPagi: "06:30 - 07:00",
+        mandi: "07:00 - 08:00",
         camilanSiang: "12:00 - 12:10",
         makanSiang: "12:10 - 13:00",
+        camilanSore: "16:00 - 16:10",
         makanMalam: "19:00 - 19:10",
-        olahragaMalam: "20:00 - 20:30"
+        olahragaMalam: "20:00 - 20:30",
+        cemilanMalam: "21:00 - 21:10"
     }
 };
 
@@ -41,10 +44,13 @@ function updateSchedule(day) {
         <ul class="list-group">
             <li class="list-group-item"><strong>${waktu.pagi}:</strong> ${makan.makanPagi}</li>
             <li class="list-group-item"><strong>${waktu.olahragaPagi}:</strong> Olahraga: ${daySchedule}</li>
+            <li class="list-group-item"><strong>${waktu.mandi}:</strong> Mandi dan persiapan untuk aktivitas sehari-hari</li>
             <li class="list-group-item"><strong>${waktu.camilanSiang}:</strong> ${makan.camilan}</li>
             <li class="list-group-item"><strong>${waktu.makanSiang}:</strong> ${makan.makanSiang}</li>
+            <li class="list-group-item"><strong>${waktu.camilanSore}:</strong> ${makan.camilan}</li>
             <li class="list-group-item"><strong>${waktu.makanMalam}:</strong> ${makan.makanMalam}</li>
             <li class="list-group-item"><strong>${waktu.olahragaMalam}:</strong> Olahraga: ${daySchedule}</li>
+            <li class="list-group-item"><strong>${waktu.cemilanMalam}:</strong> ${makan.camilan}</li>
         </ul>
     `;
 
