@@ -18,18 +18,18 @@ let schedule = {
     meal2: "Olahraga Tangan & Punggung",
     time3: "12:00 - 13:00",
     meal3: "Makan Siang",
-    time4: "16:00 - 17:00",
-    meal4: "Camilan: Regal 1-2 keping dan roti 1/2 potong"
+    time4: "19:00 - 20:00",
+    meal4: "Makan Malam"
   },
   "Selasa": {
     time1: "06:00 - 06:30",
     meal1: "Makan Pagi: Nasi seporsi dengan 2 butir telur",
-    time2: "07:30 - 08:00",
+    time2: "19:00 - 19:30",
     meal2: "Olahraga Kaki & Paha",
     time3: "12:00 - 13:00",
     meal3: "Makan Siang",
-    time4: "16:00 - 17:00",
-    meal4: "Camilan: Regal 1-2 keping dan roti 1/2 potong"
+    time4: "19:30 - 20:00",
+    meal4: "Makan Malam"
   },
   "Rabu": {
     time1: "06:00 - 06:30",
@@ -48,18 +48,18 @@ let schedule = {
     meal2: "Olahraga Tangan & Punggung",
     time3: "12:00 - 13:00",
     meal3: "Makan Siang",
-    time4: "16:00 - 17:00",
-    meal4: "Camilan: Regal 1-2 keping dan roti 1/2 potong"
+    time4: "19:00 - 20:00",
+    meal4: "Makan Malam"
   },
   "Jumat": {
     time1: "06:00 - 06:30",
     meal1: "Makan Pagi: Nasi seporsi dengan 2 butir telur",
-    time2: "07:30 - 08:00",
+    time2: "19:00 - 19:30",
     meal2: "Olahraga Kaki & Paha",
     time3: "12:00 - 13:00",
     meal3: "Makan Siang",
-    time4: "16:00 - 17:00",
-    meal4: "Camilan: Regal 1-2 keping dan roti 1/2 potong"
+    time4: "19:30 - 20:00",
+    meal4: "Makan Malam"
   },
   "Sabtu": {
     time1: "06:00 - 06:30",
