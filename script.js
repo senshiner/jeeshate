@@ -12,9 +12,9 @@ document.getElementById("currentDay").innerText = `Jadwal Hari Ini: ${currentDay
 // Menentukan jadwal berdasarkan hari
 let schedule = {
   "Senin": {
-    time1: "06:00 - 06:30",
+    time1: "07:30 - 08:00",
     meal1: "Makan Pagi: Nasi seporsi dengan 2 butir telur",
-    time2: "07:30 - 08:00",
+    time2: "20:00 - 20:30",
     meal2: "Olahraga Tangan & Punggung",
     time3: "12:00 - 13:00",
     meal3: "Makan Siang",
@@ -22,29 +22,29 @@ let schedule = {
     meal4: "Makan Malam"
   },
   "Selasa": {
-    time1: "06:00 - 06:30",
+    time1: "07:30 - 08:00",
     meal1: "Makan Pagi: Nasi seporsi dengan 2 butir telur",
-    time2: "19:00 - 19:30",
+    time2: "20:00 - 20:30",
     meal2: "Olahraga Kaki & Paha",
     time3: "12:00 - 13:00",
     meal3: "Makan Siang",
-    time4: "19:30 - 20:00",
+    time4: "19:00 - 20:00",
     meal4: "Makan Malam"
   },
   "Rabu": {
-    time1: "06:00 - 06:30",
+    time1: "07:30 - 08:00",
     meal1: "Makan Pagi: Nasi seporsi dengan 2 butir telur",
-    time2: "12:00 - 13:00",
-    meal2: "Makan Siang",
-    time3: "16:00 - 17:00",
-    meal3: "Camilan: Regal 1-2 keping dan roti 1/2 potong",
+    time2: "20:00 - 20:30",
+    meal2: "Olahraga Tangan & Punggung",
+    time3: "12:00 - 13:00",
+    meal3: "Makan Siang",
     time4: "19:00 - 20:00",
     meal4: "Makan Malam"
   },
   "Kamis": {
-    time1: "06:00 - 06:30",
+    time1: "07:30 - 08:00",
     meal1: "Makan Pagi: Nasi seporsi dengan 2 butir telur",
-    time2: "07:30 - 08:00",
+    time2: "20:00 - 20:30",
     meal2: "Olahraga Tangan & Punggung",
     time3: "12:00 - 13:00",
     meal3: "Makan Siang",
@@ -52,32 +52,32 @@ let schedule = {
     meal4: "Makan Malam"
   },
   "Jumat": {
-    time1: "06:00 - 06:30",
+    time1: "07:30 - 08:00",
     meal1: "Makan Pagi: Nasi seporsi dengan 2 butir telur",
-    time2: "19:00 - 19:30",
+    time2: "20:00 - 20:30",
     meal2: "Olahraga Kaki & Paha",
     time3: "12:00 - 13:00",
     meal3: "Makan Siang",
-    time4: "19:30 - 20:00",
+    time4: "19:00 - 20:00",
     meal4: "Makan Malam"
   },
   "Sabtu": {
-    time1: "06:00 - 06:30",
+    time1: "07:30 - 08:00",
     meal1: "Makan Pagi: Nasi seporsi dengan 2 butir telur",
-    time2: "12:00 - 13:00",
-    meal2: "Makan Siang",
-    time3: "16:00 - 17:00",
-    meal3: "Camilan: Regal 1-2 keping dan roti 1/2 potong",
+    time2: "20:00 - 20:30",
+    meal2: "Olahraga Perut",
+    time3: "12:00 - 13:00",
+    meal3: "Makan Siang",
     time4: "19:00 - 20:00",
     meal4: "Makan Malam"
   },
   "Minggu": {
-    time1: "06:00 - 06:30",
+    time1: "07:30 - 08:00",
     meal1: "Makan Pagi: Nasi seporsi dengan 2 butir telur",
-    time2: "12:00 - 13:00",
-    meal2: "Makan Siang",
-    time3: "16:00 - 17:00",
-    meal3: "Camilan: Regal 1-2 keping dan roti 1/2 potong",
+    time2: "20:00 - 20:30",
+    meal2: "Olahraga Tangan & Punggung",
+    time3: "12:00 - 13:00",
+    meal3: "Makan Siang",
     time4: "19:00 - 20:00",
     meal4: "Makan Malam"
   }
