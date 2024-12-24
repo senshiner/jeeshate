@@ -3,3 +3,37 @@
   --two-color: rgb(106, 118, 230);
   --font: Tahoma;
 }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+.schedule {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.schedule h2 {
+  color: #007bff;
+}
+
+.task h3 {
+  font-size: 18px;
+  color: #555;
+}
+
+.task p {
+  font-size: 14px;
+  color: #777;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+}
