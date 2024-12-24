@@ -1,31 +1,12 @@
-// Menentukan jadwal berdasarkan hari
-const schedule = {
-    olahraga: {
-        "Senin": "Olahraga Tangan",
-        "Selasa": "Olahraga Kaki",
-        "Rabu": "Istirahat",
-        "Kamis": "Olahraga Tangan",
-        "Jumat": "Olahraga Kaki",
-        "Sabtu": "Olahraga Perut",
-        "Minggu": "Istirahat"
-    },
-    jadwalMakan: {
-        makanPagi: "Makan Pagi: Nasi seporsi dengan 2 butir telur. Cemilan: 1-2 keping Biskuit Regal.",
-        makanSiang: "Makan Siang: Nasi putih (1 centong sedang)",
-        makanMalam: "Makan Malam: Nasi putih (1 centong kecil)",
-        camilan: "Camilan: 1-2 potong Roti Tawar, 1-2 keping Biskuit Regal."
-    },
-    waktu: {
-        pagi: "06:00 - 06:30",
-        olahragaPagi: "06:30 - 07:00",
-        mandi: "07:00 - 08:00",
-        camilanSiang: "12:00 - 12:10",
-        makanSiang: "12:10 - 13:00",
-        camilanSore: "16:00 - 16:10",
-        makanMalam: "19:00 - 19:10",
-        olahragaMalam: "20:00 - 20:30",
-        cemilanMalam: "21:00 - 21:10"
-    }
+// Menentukan jadwal olahraga berdasarkan hari
+const scheduleOlahraga = {
+    "Senin": "Olahraga Tangan",
+    "Selasa": "Olahraga Kaki",
+    "Rabu": "Istirahat",
+    "Kamis": "Olahraga Tangan",
+    "Jumat": "Olahraga Kaki",
+    "Sabtu": "Olahraga Perut",
+    "Minggu": "Istirahat"
 };
 
 // Menentukan hari saat ini
@@ -33,29 +14,15 @@ const today = new Date();
 const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
 const todayName = days[today.getDay()];
 
-// Menampilkan jadwal berdasarkan hari ini
+// Menampilkan jenis olahraga yang sesuai dengan hari ini
 function updateSchedule(day) {
-    const daySchedule = schedule.olahraga[day];
-    const makan = schedule.jadwalMakan;
-    const waktu = schedule.waktu;
+    const olahragaPagi = scheduleOlahraga[day];
+    const olahragaMalam = olahragaPagi === "Istirahat" ? "Istirahat" : olahragaPagi;
 
-    let scheduleHTML = `
-        <h4>Jadwal Hari: ${day}</h4>
-        <ul class="list-group">
-            <li class="list-group-item"><strong>${waktu.pagi}:</strong> ${makan.makanPagi}</li>
-            <li class="list-group-item"><strong>${waktu.olahragaPagi}:</strong> Olahraga: ${daySchedule}</li>
-            <li class="list-group-item"><strong>${waktu.mandi}:</strong> Mandi dan persiapan untuk aktivitas sehari-hari</li>
-            <li class="list-group-item"><strong>${waktu.camilanSiang}:</strong> ${makan.camilan}</li>
-            <li class="list-group-item"><strong>${waktu.makanSiang}:</strong> ${makan.makanSiang}</li>
-            <li class="list-group-item"><strong>${waktu.camilanSore}:</strong> ${makan.camilan}</li>
-            <li class="list-group-item"><strong>${waktu.makanMalam}:</strong> ${makan.makanMalam}</li>
-            <li class="list-group-item"><strong>${waktu.olahragaMalam}:</strong> Olahraga: ${daySchedule}</li>
-            <li class="list-group-item"><strong>${waktu.cemilanMalam}:</strong> ${makan.camilan}</li>
-        </ul>
-    `;
-
-    document.getElementById('jadwal').innerHTML = scheduleHTML;
+    // Update bagian olahraga pagi dan malam
+    document.getElementById("olahraga-pagi").textContent = olahragaPagi;
+    document.getElementById("olahraga-malam").textContent = olahragaMalam;
 }
 
-// Memanggil fungsi untuk menampilkan jadwal hari ini
+// Memanggil fungsi untuk menampilkan jadwal olahraga berdasarkan hari ini
 updateSchedule(todayName);
