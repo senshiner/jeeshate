@@ -2,37 +2,34 @@
   --one-color: rgb(0, 255, 179);
   --two-color: rgb(106, 118, 230);
   --font: Tahoma;
-}body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
 }
-
-h1, h2 {
-  color: #333;
+body {
+    background-color: #f8f9fa;
 }
-
-.schedule {
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.container {
+    max-width: 800px;
+    margin-top: 50px;
 }
-
-.schedule h2 {
-  color: #007bff;
+.schedule-card {
+    margin-bottom: 30px;
 }
-
-.task h3 {
-  font-size: 18px;
-  color: #555;
+.schedule-card .card-body {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.task p {
-  font-size: 14px;
-  color: #777;
+.schedule-card ul {
+    list-style-type: none;
+    padding: 0;
 }
-
-@media (max-width: 768px) {
-  .container {
-    width: 90%;
-  }
+.schedule-card ul li {
+    background-color: #f1f3f5;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #343a40;
 }
