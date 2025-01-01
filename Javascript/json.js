@@ -14,3 +14,6 @@ console.log(jsonString);
 //ubah string ke objek json
 const jsonObject = JSON.parse(jsonString);
 console.log(jsonObject);
+
+//input
+console.info(jsonObject.name[0]);
