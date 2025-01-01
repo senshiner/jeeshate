@@ -17,4 +17,4 @@ console.log(jsonObject);
 
 //input
 console.info(jsonObject.name);
-console.info(jsonObject.skills[1]);
+console.info(jsonObject.skills[2]);
