@@ -15,6 +15,6 @@ console.log(jsonString);
 const jsonObject = JSON.parse(jsonString);
 console.log(jsonObject);
 
-//input
+//console input
 console.info(jsonObject.name);
 console.info(jsonObject.skills[2]);
