@@ -1,61 +1,104 @@
-let items = JSON.parse(localStorage.getItem("tasks")) || [];
+const input = document.getElementById('task-input');
+const priority = document.getElementById('priority-select');
+const addBtn = document.getElementById('add-btn');
+const list = document.getElementById('task-list');
+const toggle = document.getElementById('theme-toggle');
 
-function saveItems() {
-  localStorage.setItem("tasks", JSON.stringify(items));
+const STORAGE_KEY = 'neo_tasks';
+let tasks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+function save() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
 }
 
-function renderItems() {
-  const list = document.getElementById("itemList");
-  list.innerHTML = "";
+function createTaskElement(task, index) {
+  const li = document.createElement('li');
+  li.className = `task ${task.priority}`;
+  li.dataset.index = index;
 
-  items.forEach((item, index) => {
-    const li = document.createElement("li");
+  const textInput = document.createElement('input');
+  textInput.type = 'text';
+  textInput.value = task.text;
+  textInput.disabled = true;
 
-    const input = document.createElement("input");
-    input.value = item.text;
-    input.disabled = true;
+  const actions = document.createElement('div');
+  actions.className = 'actions';
 
-    const actions = document.createElement("div");
-    actions.className = "actions";
+  const editBtn = document.createElement('button');
+  editBtn.textContent = 'Edit';
 
-    const editBtn = document.createElement("button");
-    editBtn.textContent = "Edit";
-    editBtn.onclick = () => {
-      input.disabled = false;
-      input.focus();
-    };
+  const deleteBtn = document.createElement('button');
+  deleteBtn.textContent = 'Delete';
+  deleteBtn.style.background = 'crimson';
 
-    input.addEventListener("blur", () => {
-      input.disabled = true;
-      items[index].text = input.value;
-      saveItems();
-    });
+  actions.append(editBtn, deleteBtn);
+  li.append(textInput, actions);
+  return li;
+}
 
-    const delBtn = document.createElement("button");
-    delBtn.textContent = "Delete";
-    delBtn.onclick = () => {
-      items.splice(index, 1);
-      saveItems();
-      renderItems();
-    };
-
-    actions.appendChild(editBtn);
-    actions.appendChild(delBtn);
-    li.appendChild(input);
-    li.appendChild(actions);
-    list.appendChild(li);
+function render() {
+  list.innerHTML = '';
+  tasks.forEach((t, i) => {
+    list.appendChild(createTaskElement(t, i));
   });
+  save();
 }
 
-function addItem() {
-  const input = document.getElementById("itemInput");
-  const value = input.value.trim();
-  if (!value) return;
-
-  items.push({ text: value });
-  saveItems();
-  renderItems();
-  input.value = "";
+function addTask() {
+  const text = input.value.trim();
+  const prio = priority.value;
+  if (!text) return;
+  tasks.push({ text, priority: prio });
+  input.value = '';
+  render();
 }
 
-document.addEventListener("DOMContentLoaded", renderItems);
+addBtn.addEventListener('click', addTask);
+input.addEventListener('keypress', e => e.key === 'Enter' && addTask());
+
+list.addEventListener('click', e => {
+  const li = e.target.closest('.task');
+  const index = li.dataset.index;
+  const inputField = li.querySelector('input');
+
+  if (e.target.textContent === 'Edit') {
+    inputField.disabled = false;
+    inputField.focus();
+    e.target.textContent = 'Save';
+  } else if (e.target.textContent === 'Save') {
+    tasks[index].text = inputField.value;
+    inputField.disabled = true;
+    e.target.textContent = 'Edit';
+    save();
+  } else if (e.target.textContent === 'Delete') {
+    tasks.splice(index, 1);
+    render();
+  }
+});
+
+toggle.addEventListener('change', () => {
+  document.body.classList.toggle('dark');
+  localStorage.setItem('neo_theme', document.body.classList.contains('dark'));
+});
+
+// Load theme on start
+if (localStorage.getItem('neo_theme') === 'true') {
+  document.body.classList.add('dark');
+  toggle.checked = true;
+}
+
+// Enable drag-and-drop
+new Sortable(list, {
+  animation: 150,
+  onEnd: () => {
+    const newOrder = [];
+    list.querySelectorAll('.task').forEach(el => {
+      const i = el.dataset.index;
+      newOrder.push(tasks[i]);
+    });
+    tasks = newOrder;
+    render();
+  }
+});
+
+render();
