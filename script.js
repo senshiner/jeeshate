@@ -8,48 +8,32 @@ function loadTasks() {
 
 function addTask() {
     const taskInput = document.getElementById('taskInput');
-    const task = taskInput.value;
-    if (task) {
+    const timeInput = document.getElementById('timeInput');
+    const taskText = taskInput.value.trim();
+    const taskTime = timeInput.value;
+
+    if (taskText) {
+        const task = {
+            id: Date.now(),
+            text: taskText,
+            time: taskTime,
+            completed: false
+        };
         createTaskElement(task);
         saveTask(task);
         taskInput.value = '';
+        timeInput.value = '';
     }
 }
 
 function createTaskElement(task) {
     const taskList = document.getElementById('taskList');
     const li = document.createElement('li');
-    li.textContent = task;
-
-    const deleteButton = document.createElement('button');
-    deleteButton.classList.add('delete');
-    deleteButton.textContent = 'Delete';
-    deleteButton.onclick = () => {
-        taskList.removeChild(li);
-        removeTask(task);
-    };
-
-    li.appendChild(deleteButton);
-    li.onclick = () => {
-        li.classList.toggle('completed');
-        toggleTask(task);
-    };
-
-    taskList.appendChild(li);
-}
-
-function saveTask(task) {
-    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    tasks.push(task);
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-}
-
-function removeTask(task) {
-    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    tasks = tasks.filter(t => t !== task);
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-}
-
-function toggleTask(task) {
-    // No action required for toggle in local storage; handled by class change
-}
+    li.className = `task-item ${task.completed ? 'completed' : ''}`;
+    
+    const content = document.createElement('div');
+    content.className = 'task-content';
+    content.innerHTML = `
+        ${task.text}
+        <div class="task-time">${task.time}</div>
+    `;
