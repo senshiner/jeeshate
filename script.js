@@ -37,3 +37,6 @@ function createTaskElement(task) {
         ${task.text}
         <div class="task-time">${task.time}</div>
     `;
+
+    const actions = document.createElement('div');
+    actions.className = 'task-actions';
