@@ -3,18 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NeoBrute List</title>
+  <title>NeoBrute Tasker</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>NeoBrute List</h1>
-    <div class="input-group">
-      <input type="text" id="itemInput" placeholder="Add a task...">
-      <button onclick="addItem()">Add</button>
-    </div>
-    <ul id="itemList"></ul>
-  </div>
-  <script src="script.js"></script>
+  <main class="app">
+    <header>
+      <h1>NeoBrute Tasker</h1>
+      <label class="toggle">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider"></span>
+        Dark Mode
+      </label>
+    </header>
+
+    <section class="input-section">
+      <input type="text" id="task-input" placeholder="Add a task..." />
+      <select id="priority-select">
+        <option value="low">Low</option>
+        <option value="medium" selected>Medium</option>
+        <option value="high">High</option>
+      </select>
+      <button id="add-btn">Add</button>
+    </section>
+
+    <ul id="task-list"></ul>
+  </main>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
