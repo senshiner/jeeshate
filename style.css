@@ -27,3 +27,97 @@ body {
 h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+  color: #00b4d8;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0 black;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"], 
+input[type="time"] {
+  padding: 12px;
+  border: 2px solid black;
+  border-radius: 8px;
+  font-size: 1rem;
+  flex: 1;
+  background: #e9ecef;
+}
+
+.time-input-container {
+  display: flex;
+  align-items: center;
+  background: #e9ecef;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+.time-icon {
+  padding: 12px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 12px 24px;
+  border: 2px solid black;
+  border-radius: 8px;
+  background: #00b4d8;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.1s;
+  text-transform: uppercase;
+}
+
+button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 black;
+}
+
+.task-list {
+  list-style: none;
+}
+
+.task-item {
+  background: #e9ecef;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 2px solid black;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-content {
+  flex: 1;
+}
+
+.task-time {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.task-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.edit-btn {
+  background: #ffd60a;
+}
+
+.delete-btn {
+  background: #ff0054;
+}
+
+.completed {
+  background: #d3d3d3;
+  text-decoration: line-through;
+}
