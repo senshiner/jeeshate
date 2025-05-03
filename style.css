@@ -1,35 +1,74 @@
-:root { /*css variabel*/
-  --one-color: rgb(0, 255, 179);
-  --two-color: rgb(106, 118, 230);
-  --font: Tahoma;
+* {
+  box-sizing: border-box;
 }
 body {
-    background-color: #f8f9fa;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background: #ffe600;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
 }
 .container {
-    max-width: 800px;
-    margin-top: 50px;
+  background: #fff;
+  border: 4px solid black;
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 8px 8px 0 black;
 }
-.schedule-card {
-    margin-bottom: 30px;
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: black;
 }
-.schedule-card .card-body {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
-.schedule-card ul {
-    list-style-type: none;
-    padding: 0;
+input[type="text"] {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 3px solid black;
+  background: white;
+  outline: none;
 }
-.schedule-card ul li {
-    background-color: #f1f3f5;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
+button {
+  padding: 1rem;
+  border: 3px solid black;
+  background: black;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.1s ease;
 }
-h2 {
-    font-size: 32px;
-    font-weight: bold;
-    color: #343a40;
+button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 black;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  background: white;
+  border: 3px solid black;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+li input {
+  flex: 1;
+  margin-right: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  background: none;
+}
+li .actions button {
+  margin-left: 0.25rem;
+  font-size: 0.9rem;
 }
