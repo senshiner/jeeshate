@@ -27,12 +27,3 @@ body {
 h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #00b4d8;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 0 black;
-}
-
-.input-group {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
