@@ -11,7 +11,10 @@
         <h1>Todo List</h1>
         <div class="input-group">
             <input type="text" id="taskInput" placeholder="Add a new task..." />
-            <input type="time" id="timeInput" />
+            <div class="time-input-container">
+                <span class="time-icon">⏰</span>
+                <input type="time" id="timeInput" />
+            </div>
             <button id="addButton">Add Task</button>
         </div>
         <ul id="taskList" class="task-list"></ul>
