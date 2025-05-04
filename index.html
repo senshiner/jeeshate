@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neo Brutal Todo List</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neo Brutal Todo List</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>Todo List</h1>
-        <div class="input-group">
-            <input type="text" id="taskInput" placeholder="Add a new task..." />
-            <div class="time-input-container">
-                <span class="time-icon">⏰</span>
-                <input type="time" id="timeInput" />
-            </div>
-            <button id="addButton">Add Task</button>
+  <div class="container">
+    <h1>Todo List</h1>
+
+    <!-- Input Task Section -->
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="Add a new task..." />
+
+      <div class="time-and-button">
+        <div class="time-input-container">
+          <span class="time-icon">⏰</span>
+          <input type="time" id="timeInput" />
         </div>
-        <ul id="taskList" class="task-list"></ul>
+        <button id="addButton">Add Task</button>
+      </div>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Task List -->
+    <ul id="taskList" class="task-list"></ul>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
