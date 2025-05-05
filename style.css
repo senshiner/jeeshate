@@ -1,154 +1,393 @@
-/* Reset dasar */
+:root {
+  /* Light mode colors */
+  --background: #ffffff;
+  --text: #121212;
+  --shadow: #121212;
+  --accent: #00C2CB;
+  --accent-dark: #00A0A8;
+  --card-bg: #f5f5f5;
+  --border: #dedede;
+  --completed: #888888;
+  
+  /* Shadow variables */
+  --shadow-offset: 4px;
+  --shadow-blur: 0px;
+  
+  /* Transitions */
+  --transition-speed: 0.3s;
+}
+
+.dark-mode {
+  --background: #121212;
+  --text: #ffffff;
+  --shadow: #ffffff;
+  --accent: #00C2CB;
+  --accent-dark: #00E8F2;
+  --card-bg: #1e1e1e;
+  --border: #333333;
+  --completed: #666666;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
 }
 
-/* Gaya body */
-body {
-  background-color: #f5f5f5;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-/* Kontainer utama */
-.container {
-  background: white;
-  padding: 30px;
-  border: 3px solid black;
-  border-radius: 12px;
-  box-shadow: 8px 8px 0 black;
+html {
+  height: 100%;
   width: 100%;
-  max-width: 600px;
+  scroll-behavior: smooth;
 }
 
-/* Judul utama */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #00b4d8;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 0 black;
-  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
-/* Grup input */
-.input-group {
-  display: flex;
-  flex-wrap: wrap; /* supaya responsif */
-  gap: 10px;
-  align-items: center;
-  margin-bottom: 20px;
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
 }
 
-/* Input teks */
-input[type="text"] {
-  padding: 12px;
-  border: 2px solid black;
-  border-radius: 8px;
+h2:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  background-color: var(--accent);
+  bottom: -8px;
+  left: 0;
+  z-index: -1;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+/* Brutalist Button */
+.brutalist-button {
+  background-color: var(--accent);
+  color: var(--background);
+  border: 2px solid var(--text);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) var(--shadow-blur) var(--shadow);
+  padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  flex: 1;
-  background: #e9ecef;
-  min-width: 200px;
-}
-
-/* Input waktu + ikon */
-.time-input-container {
-  display: flex;
-  align-items: center;
-  background: #e9ecef;
-  border: 2px solid black;
-  border-radius: 8px;
-  padding: 6px;
-  width: fit-content;
-  max-width: 120px; /* batasi lebarnya */
-}
-
-.time-icon {
-  font-size: 1rem;
-  margin-right: 6px;
-}
-
-input[type="time"] {
-  border: none;
-  background: transparent;
-  font-size: 1rem;
-  width: 70px; /* paksa ukuran kecil */
-  padding: 0;
-  margin: 0;
-}
-
-/* Tombol tambah */
-button {
-  padding: 12px 16px;
-  border: 2px solid black;
-  border-radius: 8px;
-  background: #00b4d8;
-  color: white;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
-  transition: transform 0.1s;
-  text-transform: uppercase;
-  white-space: nowrap;
-  max-width: 120px;
-  flex-shrink: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-button:hover {
+.brutalist-button:hover {
+  background-color: var(--accent-dark);
   transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0 black;
+  box-shadow: calc(var(--shadow-offset) + 2px) calc(var(--shadow-offset) + 2px) var(--shadow-blur) var(--shadow);
 }
 
-/* Daftar tugas */
-.task-list {
-  list-style: none;
+.brutalist-button:active {
+  transform: translate(0, 0);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) var(--shadow-blur) var(--shadow);
 }
 
-/* Item tugas */
-.task-item {
-  background: #e9ecef;
-  padding: 15px;
-  margin-bottom: 10px;
-  border: 2px solid black;
-  border-radius: 8px;
+/* Navigation */
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  padding: 1.5rem 0;
 }
 
-/* Isi tugas */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  background-color: var(--accent);
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--text);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) var(--shadow-blur) var(--shadow);
+}
+
+#theme-toggle {
+  background: none;
+  border: 2px solid var(--text);
+  color: var(--text);
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-offset) var(--shadow-offset) var(--shadow-blur) var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#theme-toggle:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: calc(var(--shadow-offset) + 2px) calc(var(--shadow-offset) + 2px) var(--shadow-blur) var(--shadow);
+}
+
+/* Header */
+header {
+  padding: 3rem 0 5rem;
+}
+
+.hero {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Input Section */
+.task-input-section {
+  padding: 3rem 0;
+  background-color: var(--card-bg);
+  border-top: 2px solid var(--text);
+  border-bottom: 2px solid var(--text);
+}
+
+.input-container {
+  display: flex;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: slideUp 0.5s ease-in-out;
+}
+
+#task-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--text);
+  background-color: var(--background);
+  color: var(--text);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) var(--shadow-blur) var(--shadow);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+#task-input:focus {
+  outline: none;
+  transform: translate(-2px, -2px);
+  box-shadow: calc(var(--shadow-offset) + 2px) calc(var(--shadow-offset) + 2px) var(--shadow-blur) var(--shadow);
+}
+
+/* Features Section */
+.features-section {
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--text);
+  padding: 2rem;
+  box-shadow: var(--shadow-offset) var(--shadow-offset) var(--shadow-blur) var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.feature-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: calc(var(--shadow-offset) + 4px) calc(var(--shadow-offset) + 4px) var(--shadow-blur) var(--shadow);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+}
+
+/* Task List Section */
+.task-list-section {
+  padding: 5rem 0;
+  background-color: var(--card-bg);
+  border-top: 2px solid var(--text);
+}
+
+.task-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: var(--background);
+  border: 2px solid var(--text);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: var(--shadow-offset) var(--shadow-offset) var(--shadow-blur) var(--shadow);
+  color: var(--text);
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background-color: var(--accent);
+  color: var(--background);
+  transform: translate(-2px, -2px);
+  box-shadow: calc(var(--shadow-offset) + 2px) calc(var(--shadow-offset) + 2px) var(--shadow-blur) var(--shadow);
+}
+
+.task-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.task-item {
+  background-color: var(--background);
+  border: 2px solid var(--text);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-offset) var(--shadow-offset) var(--shadow-blur) var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.task-item:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: calc(var(--shadow-offset) + 3px) calc(var(--shadow-offset) + 3px) var(--shadow-blur) var(--shadow);
+}
+
 .task-content {
   flex: 1;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
 }
 
-/* Jam tugas */
-.task-time {
-  color: #666;
-  font-size: 0.9rem;
+.task-item.completed .task-content {
+  text-decoration: line-through;
+  color: var(--completed);
 }
 
-/* Tombol aksi (edit/delete) */
 .task-actions {
   display: flex;
-  gap: 5px;
+  justify-content: space-between;
 }
 
-.edit-btn {
-  background: #ffd60a;
+.task-toggle, .task-delete {
+  padding: 0.5rem;
+  background: none;
+  border: 2px solid var(--text);
+  cursor: pointer;
+  box-shadow: 2px 2px var(--shadow-blur) var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.delete-btn {
-  background: #ff0054;
+.task-toggle:hover, .task-delete:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px var(--shadow-blur) var(--shadow);
 }
 
-/* Tugas selesai */
-.completed {
-  background: #d3d3d3;
-  text-decoration: line-through;
+.task-toggle {
+  color: var(--accent);
+}
+
+.task-delete {
+  color: #ff4d4d;
+}
+
+/* Footer */
+footer {
+  background-color: var(--card-bg);
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 2px solid var(--text);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .input-container {
+    flex-direction: column;
+  }
+  
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .task-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .container {
+    width: 95%;
+    padding: 0 10px;
+  }
 }
