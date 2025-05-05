@@ -1,31 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Neo Brutal Todo List</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskBrut - Neobrutalist To-Do List</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
-  <div class="container">
-    <h1>Todo List</h1>
 
-    <!-- Input Task Section -->
-    <div class="input-group">
-      <input type="text" id="taskInput" placeholder="Add a new task..." />
-
-      <div class="time-and-button">
-        <div class="time-input-container">
-          <span class="time-icon">⏰</span>
-          <input type="time" id="timeInput" />
+<body class="light-mode">
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">TaskBrut</div>
+        <div class="nav-controls">
+          <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
         </div>
-        <button id="addButton">Add Task</button>
+      </nav>
+      <div class="hero">
+        <h1>Organize your tasks<br>with brutal simplicity</h1>
+        <p class="subtitle">A clean, modern to-do list with no distractions</p>
       </div>
     </div>
+  </header>
 
-    <!-- Task List -->
-    <ul id="taskList" class="task-list"></ul>
-  </div>
+  <main>
+    <section class="task-input-section">
+      <div class="container">
+        <div class="input-container">
+          <input type="text" id="task-input" placeholder="What needs to be done?">
+          <button id="add-task" class="brutalist-button">Add Task</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-section">
+      <div class="container">
+        <h2>Why TaskBrut?</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3>Fast & Simple</h3>
+            <p>No unnecessary features. Just add tasks and get things done.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <h3>Bold Design</h3>
+            <p>A distinctive neobrutalist look that stands out from the crowd.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-moon"></i>
+            </div>
+            <h3>Light & Dark</h3>
+            <p>Choose the mode that suits your preference and working environment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="task-list-section">
+      <div class="container">
+        <h2>Your Tasks</h2>
+        <div class="task-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="active">Active</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+        <div id="task-list" class="task-list">
+          <!-- Tasks will be added here via JavaScript -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 TaskBrut. A brutally simple to-do list.</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
