@@ -3,70 +3,40 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TaskBrut - Neobrutalist To-Do List</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>MyTask | To-Do List Neo</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body class="light-mode">
+<body>
   <header>
     <div class="container">
-      <nav>
-        <div class="logo">TaskBrut</div>
-        <div class="nav-controls">
-          <button id="theme-toggle" aria-label="Toggle dark mode">
-            <i class="fas fa-moon"></i>
-          </button>
-        </div>
-      </nav>
-      <div class="hero">
-        <h1>Organize your tasks<br>with brutal simplicity</h1>
-        <p class="subtitle">A clean, modern to-do list with no distractions</p>
+      <div class="logo">MyTask</div>
+      <div class="theme-switch">
+        <input type="checkbox" id="theme-toggle">
+        <label for="theme-toggle">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+        </label>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="task-input-section">
+    <section class="hero">
       <div class="container">
-        <div class="input-container">
-          <input type="text" id="task-input" placeholder="What needs to be done?">
-          <button id="add-task" class="brutalist-button">Add Task</button>
+        <h1>Organize Your Life <span class="accent">Effortlessly</span></h1>
+        <p class="hero-text">A simple, yet powerful task management app inspired by neobrutalism design principles.</p>
+        
+        <div class="task-input-container">
+          <input type="text" id="taskInput" placeholder="Add a new task...">
+          <button id="addTaskBtn" class="btn-primary">Add Task</button>
         </div>
       </div>
     </section>
 
-    <section class="features-section">
-      <div class="container">
-        <h2>Why TaskBrut?</h2>
-        <div class="feature-grid">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-bolt"></i>
-            </div>
-            <h3>Fast & Simple</h3>
-            <p>No unnecessary features. Just add tasks and get things done.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-paint-brush"></i>
-            </div>
-            <h3>Bold Design</h3>
-            <p>A distinctive neobrutalist look that stands out from the crowd.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-moon"></i>
-            </div>
-            <h3>Light & Dark</h3>
-            <p>Choose the mode that suits your preference and working environment.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="task-list-section">
+    <section class="tasks-section">
       <div class="container">
         <h2>Your Tasks</h2>
         <div class="task-filters">
@@ -74,8 +44,31 @@
           <button class="filter-btn" data-filter="active">Active</button>
           <button class="filter-btn" data-filter="completed">Completed</button>
         </div>
-        <div id="task-list" class="task-list">
-          <!-- Tasks will be added here via JavaScript -->
+        <div class="tasks-grid" id="tasksList">
+          <!-- Tasks will be dynamically added here -->
+        </div>
+      </div>
+    </section>
+
+    <section class="how-to-use">
+      <div class="container">
+        <h2>How To Use It</h2>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Add Your Task</h3>
+            <p>Type your task in the input box and click "Add Task" or press Enter</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Manage Tasks</h3>
+            <p>Click on a task to mark it as completed, or use the delete button to remove it</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Filter & Organize</h3>
+            <p>Use the filter buttons to view all, active, or completed tasks</p>
+          </div>
         </div>
       </div>
     </section>
@@ -83,7 +76,12 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 TaskBrut. A brutally simple to-do list.</p>
+      <p>&copy; 2025 MyTask. Creator Senshiner.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
     </div>
   </footer>
 
